@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@100..900&display=swap');
+
+@layer utilities {
+    /* Utility class for Montserrat */
+    .font-Montserrat {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
