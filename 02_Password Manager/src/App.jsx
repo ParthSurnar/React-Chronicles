@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import Navbar from './component/Navbar'
+import Manager from './component/Manager'
 
 
 function App() {
@@ -7,7 +9,8 @@ function App() {
 
   return (
     <>
-      <h1 className='text-xl text-red-700'> hey i am new setup</h1>
+    <Navbar />
+    <Manager />
     </>
   )
 }
