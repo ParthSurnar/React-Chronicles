@@ -41,7 +41,7 @@ const Manager = () => {
             toast('Password Saved!')
             setform({ site: "", username: "", password: "" });
         } else {
-            console.log("Please fill in all fields!");
+            toast.error('Please fill all the fields!')
         }
 
     };
@@ -102,7 +102,7 @@ const Manager = () => {
                             className="rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] p-4 py-2 w-full md:w-4/5"
                             type="text"
                             name="site"
-                            id=""
+                            id="site"
                         />
 
                         <div className="flex flex-col md:flex-row w-full gap-3 md:gap-5 justify-between">
@@ -113,7 +113,7 @@ const Manager = () => {
                                 className="rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-2"
                                 type="text"
                                 name="username"
-                                id=""
+                                id="username"
                             />
 
                             <div className="relative flex flex-1">
@@ -125,7 +125,7 @@ const Manager = () => {
                                     className="rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-2"
                                     type="password"
                                     name="password"
-                                    id=""
+                                    id="password"
                                 />
                                 <span
                                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black cursor-pointer"
