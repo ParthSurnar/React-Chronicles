@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 
 const Manager = () => {
     const ref = useRef()
+    const passwordRef = useRef()
     const [form, setform] = useState({ site: "", username: "", password: "" })
     const [passwordArray, setPasswordArray] = useState([])
 
@@ -17,7 +18,7 @@ const Manager = () => {
 
 
     const showPassword = () => {
-        // alert("show the password")
+        passwordRef.current.type = passwordRef.current.type === "password" ? "text" : "password"
         if (ref.current.src.includes("eyecross.png")) {
             ref.current.src = "eye.png"
         } else {
@@ -57,7 +58,7 @@ const Manager = () => {
                         <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="text" name="username" id="" />
 
                         <div className="relative items-center text-center flex">
-                            <input value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="text" name="password" id="" />
+                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="password" name="password" id="" />
                             <span className='absolute right-2 text-black items-center text-center cursor-pointer' onClick={showPassword}>
                                 <img ref={ref} width={20} src="eye.png" alt="" />
                             </span>
@@ -78,30 +79,68 @@ const Manager = () => {
                     <div className="bg-purple-400 text-black items-center flex justify-center p-2 rounded-full border border-purple-600 font-bold mt-4 shadow-md">
                         Total Passwords: {passwordArray.length}
                     </div>
+
                     <div className="overflow-x-auto mt-4">
-                        <table className="table-auto w-full bg-purple-300 rounded-xl shadow-lg border-separate border-spacing-2 border border-purple-500">
-                            <thead className="bg-purple-400 text-black rounded-md">
-                                <tr>
-                                    <th className="p-3 text-left text-sm font-bold uppercase">Website</th>
-                                    <th className="p-3 text-left text-sm font-bold uppercase">Username</th>
-                                    <th className="p-3 text-left text-sm font-bold uppercase">Password</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {passwordArray.map((password, index) => (
-                                    <tr
-                                        key={index}
-                                        className="bg-purple-200 hover:bg-purple-100 transition duration-200 text-black rounded-md"
-                                    >
-                                        <td className="p-4 text-sm border-b border-purple-500">{password.site}</td>
-                                        <td className="p-4 text-sm border-b border-purple-500">{password.username}</td>
-                                        <td className="p-4 text-sm border-b border-purple-500">{password.password}</td>
+                        {passwordArray.length === 0 ? (
+                            // Display this if no passwords exist
+                            <div className="text-center text-black bg-purple-200 p-4 rounded-lg shadow-md border border-purple-500 font-medium">
+                                No Passwords to display
+                            </div>
+                        ) : (
+                            // Display the table if passwords exist
+                            <table className="table-auto w-full bg-purple-300 rounded-xl shadow-lg border-separate border-spacing-2 border border-purple-500">
+                                <thead className="bg-purple-400 text-black rounded-md">
+                                    <tr>
+                                        <th className="p-3 text-left text-sm font-bold uppercase">Website</th>
+                                        <th className="p-3 text-left text-sm font-bold uppercase">Username</th>
+                                        <th className="p-3 text-left text-sm font-bold uppercase">Password</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {passwordArray.map((password, index) => (
+                                        <tr key={index} className="bg-purple-200 hover:bg-purple-100 transition duration-200 text-black rounded-md">
+                                            <td className="p-4 text-sm border-b border-purple-500 relative">
+                                                <a href={password.site} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                                                    {password.site}
+                                                </a>
+                                                <img onClick={() => navigator.clipboard.writeText(password.site)}
+                                                    className="absolute top-[17px] right-1 cursor-pointer"
+                                                    width={15}
+                                                    height={15}
+                                                    src="copy-regular.svg"
+                                                    alt="Copy"
+                                                />
+                                            </td>
+                                            <td className="p-4 text-sm border-b border-purple-500 relative">
+                                                {password.username}
+                                                <img onClick={() => navigator.clipboard.writeText(password.username)}
+                                                    className="absolute top-[17px] right-1 cursor-pointer"
+                                                    width={15}
+                                                    height={15}
+                                                    src="copy-regular.svg"
+                                                    alt="Copy"
+                                                />
+                                            </td>
+                                            <td className="p-4 text-sm border-b border-purple-500 relative">
+                                                {password.password}
+                                                <img onClick={() => navigator.clipboard.writeText(password.password)}
+                                                    className="absolute top-[17px] right-1 cursor-pointer"
+                                                    width={15}
+                                                    height={15}
+                                                    src="copy-regular.svg"
+                                                    alt="Copy"
+                                                />
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+
+                            </table>
+
+                        )}
                     </div>
                 </div>
+
 
             </div>
 
