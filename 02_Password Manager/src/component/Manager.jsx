@@ -68,8 +68,41 @@ const Manager = () => {
                             src="https://cdn.lordicon.com/jgnvfzqg.json"
                             trigger="hover">
                         </lord-icon>
-                        Add Password</button>
+                        Add Password
+                    </button>
                 </div>
+                <div className="passwords font-Montserrat">
+                    <h2 className="bg-purple-400 text-black items-center flex justify-center p-3 rounded-full border border-purple-600 font-bold text-lg shadow-md">
+                        Your Passwords
+                    </h2>
+                    <div className="bg-purple-400 text-black items-center flex justify-center p-2 rounded-full border border-purple-600 font-bold mt-4 shadow-md">
+                        Total Passwords: {passwordArray.length}
+                    </div>
+                    <div className="overflow-x-auto mt-4">
+                        <table className="table-auto w-full bg-purple-300 rounded-xl shadow-lg border-separate border-spacing-2 border border-purple-500">
+                            <thead className="bg-purple-400 text-black rounded-md">
+                                <tr>
+                                    <th className="p-3 text-left text-sm font-bold uppercase">Website</th>
+                                    <th className="p-3 text-left text-sm font-bold uppercase">Username</th>
+                                    <th className="p-3 text-left text-sm font-bold uppercase">Password</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {passwordArray.map((password, index) => (
+                                    <tr
+                                        key={index}
+                                        className="bg-purple-200 hover:bg-purple-100 transition duration-200 text-black rounded-md"
+                                    >
+                                        <td className="p-4 text-sm border-b border-purple-500">{password.site}</td>
+                                        <td className="p-4 text-sm border-b border-purple-500">{password.username}</td>
+                                        <td className="p-4 text-sm border-b border-purple-500">{password.password}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
 
         </>
