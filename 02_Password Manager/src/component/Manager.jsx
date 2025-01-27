@@ -34,8 +34,8 @@ const Manager = () => {
         if (form.site && form.username && form.password) {
             const newPassword = { ...form, id: uuidv4() };
             const updatedPasswordArray = [...passwordArray, newPassword];
-
-            setPasswordArray(updatedPasswordArray); // Update state
+            
+            setPasswordArray(updatedPasswordArray); // Update the state
             localStorage.setItem("passwords", JSON.stringify(updatedPasswordArray)); // Save to localStorage
             console.log(updatedPasswordArray);
             toast('Password Saved!')
