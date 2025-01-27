@@ -21,20 +21,23 @@ const Manager = () => {
 
 
     const showPassword = () => {
-        passwordRef.current.type = passwordRef.current.type === "password" ? "text" : "password"
-        if (ref.current.src.includes("eyecross.png")) {
-            ref.current.src = "eye.png"
+        // Check if the eye icon is clicked to show the password
+        if (ref.current.src.includes("eye.png")) {
+            passwordRef.current.type = "text";  // Show the password
+            ref.current.src = "eyecross.png";  // Switch the icon to 'crossed-eye'
         } else {
-            ref.current.src = "eyecross.png"
+            passwordRef.current.type = "password";  // Hide the password
+            ref.current.src = "eye.png";  // Switch the icon to 'eye'
         }
     }
+
 
     const savePassword = () => {
 
         if (form.site && form.username && form.password) {
             const newPassword = { ...form, id: uuidv4() };
             const updatedPasswordArray = [...passwordArray, newPassword];
-            
+
             setPasswordArray(updatedPasswordArray); // Update the state
             localStorage.setItem("passwords", JSON.stringify(updatedPasswordArray)); // Save to localStorage
             console.log(updatedPasswordArray);
@@ -209,11 +212,15 @@ const Manager = () => {
                                                     />
                                                 </td>
                                                 <td className="p-4 text-sm border-b border-purple-500 relative">
-                                                    {password.password}
+                                                    
+                                                    {"*".repeat(password.password.length)}
+                                                    
                                                     <img
                                                         onClick={() => {
+                                                           
                                                             navigator.clipboard.writeText(password.password);
                                                             toast("Password copied!");
+
                                                         }}
                                                         className="absolute top-1/2 right-2 transform -translate-y-1/2 cursor-pointer"
                                                         width={15}
