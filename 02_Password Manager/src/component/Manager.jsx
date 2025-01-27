@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useRef, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { v4 as uuidv4 } from 'uuid';
 
 const Manager = () => {
     const ref = useRef()
@@ -29,9 +30,25 @@ const Manager = () => {
     }
 
     const savePassword = () => {
-        setPasswordArray([...passwordArray, form])
-        localStorage.setItem("passwords", JSON.stringify([...passwordArray, form]))
+        setPasswordArray([...passwordArray, { ...form, id: uuidv4() }])
+        localStorage.setItem("passwords", JSON.stringify([...passwordArray, { ...form, id: uuidv4() }]))
         console.log([...passwordArray, form])
+    }
+
+    const deletePassword = (id) => {
+        console.log("Deleting password with ID", id)
+        let newPasswords = passwordArray.filter((password) => password.id !== id)
+        localStorage.setItem("passwords", JSON.stringify(newPasswords))
+        setPasswordArray(newPasswords)
+        // console.log([...passwordArray, form])
+    }
+
+    const editPassword = (id) => {
+        console.log("Editing password with ID", id)
+        let newPasswords = passwordArray.filter((password) => password.id !== id)
+        let passwordToEdit = passwordArray.find((password) => password.id === id)
+        setform({ site: passwordToEdit.site, username: passwordToEdit.username, password: passwordToEdit.password })
+        setPasswordArray(newPasswords)
     }
 
     const handleChange = (e) => {
@@ -66,24 +83,24 @@ const Manager = () => {
                 <p className='font-Montserrat text-center text-lg pt-2'>Your own Password Manager</p>
                 <div className="text-white p-4 flex flex-col gap-5 items-center">
 
-                    <input value={form.site} onChange={handleChange} placeholder='Enter Website URL' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] p-4 py-1 w-full' type="text" name="site" id="1" />
+                    <input value={form.site} onChange={handleChange} placeholder='Enter Website URL' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] p-4 py-1 w-full' type="text" name="site" id="" />
 
                     <div className="flex w-full gap-3 justify-between ">
-                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="text" name="username" id="2" />
+                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="text" name="username" id="" />
 
                         <div className="relative items-center text-center flex">
-                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="password" name="password" id="3" />
+                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="password" name="password" id="" />
                             <span className='absolute right-2 text-black items-center text-center cursor-pointer' onClick={showPassword}>
                                 <img ref={ref} width={20} src="eye.png" alt="" />
                             </span>
                         </div>
                     </div>
-                    <button onClick={savePassword} className='text-black cursor-pointer font-Montserrat justify-center items-center flex w-fit bg-purple-400 rounded-full px-3 py-2 hover:bg-purple-300 transition-all duration-200 ease-in-out font-medium gap-1 border border-purple-600 '>
+                    <button onClick={savePassword} className='text-black cursor-pointer font-Montserrat justify-center items-center flex w-fit bg-purple-400 rounded-full px-4 py-1 hover:bg-purple-300 transition-all duration-200 ease-in-out font-medium gap-1 border border-purple-600 '>
                         <lord-icon
                             src="https://cdn.lordicon.com/jgnvfzqg.json"
                             trigger="hover">
                         </lord-icon>
-                        Add Password
+                        Save
                     </button>
                 </div>
                 <div className="passwords font-Montserrat">
@@ -108,6 +125,7 @@ const Manager = () => {
                                         <th className="p-3 text-left text-sm font-bold uppercase">Website</th>
                                         <th className="p-3 text-left text-sm font-bold uppercase">Username</th>
                                         <th className="p-3 text-left text-sm font-bold uppercase">Password</th>
+                                        <th className="p-3 text-left text-sm font-bold uppercase ">actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -188,6 +206,25 @@ const Manager = () => {
                                                     alt="Copy"
                                                 />
                                             </td>
+                                            <td className='justify-center flex '>
+                                                <span className=" items-center flex cursor-pointer top-[17px] gap-2 pt-3">
+                                                    <span onClick={() => { editPassword(password.id) }}>
+                                                        <lord-icon
+                                                            src="https://cdn.lordicon.com/wkvacbiw.json"
+                                                            trigger="hover"
+                                                            style={{ width: '25px', height: '25px' }}>
+                                                        </lord-icon>
+                                                    </span>
+                                                    <span onClick={() => deletePassword(password.id)}>
+                                                        <lord-icon
+                                                            src="https://cdn.lordicon.com/skkahier.json"
+                                                            trigger="hover"
+                                                            style={{ width: '25px', height: '25px' }}
+                                                        />
+                                                    </span>
+                                                </span>
+                                            </td>
+
                                         </tr>
                                     ))}
                                 </tbody>
