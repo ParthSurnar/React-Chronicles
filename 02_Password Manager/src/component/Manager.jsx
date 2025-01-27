@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { useRef, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Manager = () => {
     const ref = useRef()
@@ -40,6 +42,18 @@ const Manager = () => {
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={true}
+                pauseOnHover
+                theme="dark"
+            />
             <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
 
             <div className="  mx-auto max-w-4xl ">
@@ -52,13 +66,13 @@ const Manager = () => {
                 <p className='font-Montserrat text-center text-lg pt-2'>Your own Password Manager</p>
                 <div className="text-white p-4 flex flex-col gap-5 items-center">
 
-                    <input value={form.site} onChange={handleChange} placeholder='Enter Website URL' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] p-4 py-1 w-full' type="text" name="site" id="" />
+                    <input value={form.site} onChange={handleChange} placeholder='Enter Website URL' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] p-4 py-1 w-full' type="text" name="site" id="1" />
 
                     <div className="flex w-full gap-3 justify-between ">
-                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="text" name="username" id="" />
+                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="text" name="username" id="2" />
 
                         <div className="relative items-center text-center flex">
-                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="password" name="password" id="" />
+                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-[#B39DDB] text-black focus:outline-[#9932CC] flex-1 p-4 py-1' type="password" name="password" id="3" />
                             <span className='absolute right-2 text-black items-center text-center cursor-pointer' onClick={showPassword}>
                                 <img ref={ref} width={20} src="eye.png" alt="" />
                             </span>
@@ -103,27 +117,70 @@ const Manager = () => {
                                                 <a href={password.site} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                                     {password.site}
                                                 </a>
-                                                <img onClick={() => navigator.clipboard.writeText(password.site)}
+                                                <img
+                                                    onClick={() => {
+                                                        navigator.clipboard.writeText(password.site); // Copy the site URL to clipboard
+                                                        toast('Website URL copied!', { // Show toast notification
+                                                            position: "top-right",
+                                                            autoClose: 5000,
+                                                            hideProgressBar: false,
+                                                            closeOnClick: true,
+                                                            pauseOnHover: true,
+                                                            draggable: true,
+                                                            progress: undefined,
+                                                            theme: "dark",
+                                                            transition: "Bounce",
+                                                        });
+                                                    }}
                                                     className="absolute top-[17px] right-1 cursor-pointer"
                                                     width={15}
                                                     height={15}
                                                     src="copy-regular.svg"
                                                     alt="Copy"
                                                 />
+
                                             </td>
                                             <td className="p-4 text-sm border-b border-purple-500 relative">
                                                 {password.username}
-                                                <img onClick={() => navigator.clipboard.writeText(password.username)}
+                                                <img
+                                                    onClick={() => {
+                                                        navigator.clipboard.writeText(password.username); // Copy the username to clipboard
+                                                        toast('Username copied!', { // Show toast notification
+                                                            position: "top-right",
+                                                            autoClose: 4000,
+                                                            hideProgressBar: false,
+                                                            closeOnClick: false,
+                                                            pauseOnHover: true,
+                                                            draggable: true,
+                                                            progress: undefined,
+                                                            theme: "dark",
+                                                            transition: "bounce"
+                                                        });
+                                                    }}
                                                     className="absolute top-[17px] right-1 cursor-pointer"
                                                     width={15}
                                                     height={15}
                                                     src="copy-regular.svg"
                                                     alt="Copy"
                                                 />
+
                                             </td>
                                             <td className="p-4 text-sm border-b border-purple-500 relative">
                                                 {password.password}
-                                                <img onClick={() => navigator.clipboard.writeText(password.password)}
+                                                <img onClick={() => {
+                                                    navigator.clipboard.writeText(password.password)
+                                                    toast('password copied!', { // Show toast notification
+                                                        position: "top-right",
+                                                        autoClose: 4000,
+                                                        hideProgressBar: false,
+                                                        closeOnClick: false,
+                                                        pauseOnHover: true,
+                                                        draggable: true,
+                                                        progress: undefined,
+                                                        theme: "dark",
+                                                        transition: "bounce"
+                                                    });
+                                                }}
                                                     className="absolute top-[17px] right-1 cursor-pointer"
                                                     width={15}
                                                     height={15}
