@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { v4 as uuidv4 } from 'uuid';
 
+/* The above code snippet is a React functional component named `Manager`. Inside the component, it is
+using React hooks `useRef` and `useState` to manage state and references. */
 const Manager = () => {
     const ref = useRef()
     const passwordRef = useRef()
@@ -43,6 +45,8 @@ const Manager = () => {
     }
 
 
+ /* The above code is a JavaScript React function named `savePassword` that is responsible for saving a
+ new password entry. Here is a breakdown of what the code does: */
     const savePassword =async () => {
 
         if (form.site && form.username && form.password) {
@@ -64,6 +68,10 @@ const Manager = () => {
     };
 
 
+    /**
+     * The function `deletePassword` deletes a password from an array based on its ID and sends a
+     * DELETE request to a server.
+     */
     const deletePassword =async (id) => {
         console.log("Deleting password with ID", id)
         let newPasswords = passwordArray.filter((password) => password.id !== id)
@@ -76,6 +84,10 @@ const Manager = () => {
         // console.log([...passwordArray, form])
     }
 
+    /**
+     * The `editPassword` function edits a password in an array based on the provided ID and updates
+     * the form state with the password details.
+     */
     const editPassword = (id) => {
         console.log("Editing password with ID", id)
         let newPasswords = passwordArray.filter((password) => password.id !== id)
@@ -91,6 +103,11 @@ const Manager = () => {
 
 
     return (
+        /* The above code is using the `ToastContainer` component from a library in a React application.
+         It is configuring the toast notifications to appear
+        at the top-right corner, automatically close after 5 seconds, show a progress bar, not stack
+        the newest on top, close on click, not support right-to-left text direction, pause on focus
+        loss, be draggable, pause on hover, and use a dark theme. */
         <>
             <ToastContainer
                 position="top-right"
@@ -104,6 +121,8 @@ const Manager = () => {
                 pauseOnHover
                 theme="dark"
             />
+            /* The above code is a snippet of JSX code written in JavaScript React. It appears to be a
+            form for a password manager application. */
             <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
 
             <div className="md:container px-4">
@@ -164,6 +183,9 @@ const Manager = () => {
                         </button>
                     </div>
 
+                    /* The above code is a snippet of JSX code written in JavaScript React. It is a
+                    component that displays a list of passwords. Here is a breakdown of what the
+                    code is doing: */
                     <div className="passwords font-Montserrat mt-8">
                         <h2 className="bg-purple-400 text-black flex justify-center p-3 rounded-full border border-purple-600 font-bold text-lg shadow-md">
                             Your Passwords
@@ -189,6 +211,10 @@ const Manager = () => {
                                     </thead>
                                     <tbody>
                                         {passwordArray.map((password, index) => (
+                                          /* The above code is a snippet of JavaScript React code that
+                                          is rendering a table row (`<tr>`) for each item in a list
+                                          of passwords. Each row displays the site, username, and
+                                          password information of a password object. */
                                             <tr
                                                 key={index}
                                                 className="bg-purple-200 hover:bg-purple-100 transition duration-200 text-black"

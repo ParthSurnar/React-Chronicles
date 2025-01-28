@@ -2,6 +2,8 @@ import React from 'react'
 
 const Navbar = () => {
   return (
+  /* The code you provided is a React functional component called `Navbar`. It represents a navigation
+  bar with a logo and a GitHub button. Here's a breakdown of what the code is doing: */
     <nav className="bg-purple-400 flex flex-wrap items-center  md:justify-between justify-center px-8 md:px-[350px] py-4 text-white font-Montserrat">
       {/* Logo */}
       <div className="logo font-extrabold text-2xl flex items-center">
