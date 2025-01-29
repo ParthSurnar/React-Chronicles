@@ -1,8 +1,19 @@
 "use client"
-import React from 'react'
+import React ,{useEffect} from 'react'
 import { useSession, signIn, signOut } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
+
+    const { data: session } = useSession();
+    const router = useRouter()
+    // useeffect to redirect to dashboard if session is available and this will avoid any errors
+    useEffect(() => {
+        if (session) {
+            router.push('/dashboard');
+        }
+    }, [session, router]);
+    // If session is available, redirect to dashboard
     return (
         <>
             <div className='font-nosifer text-soft-neon flex justify-center items-center pt-7 text-center container mx-auto flex-col'>
