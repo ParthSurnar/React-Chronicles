@@ -1,3 +1,5 @@
+import { Nosifer } from 'next/font/google';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,8 +10,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'soft-neon': '#E2E8F0',
+      },
+      fontFamily: {
+        nosifer: ['Nosifer', 'cursive'],
+
       },
     },
   },
