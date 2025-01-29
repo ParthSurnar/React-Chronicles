@@ -1,11 +1,13 @@
+"use client"
 import React from 'react'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 const Login = () => {
     return (
         <>
             <div className='font-nosifer text-soft-neon flex justify-center items-center pt-7 text-center container mx-auto flex-col'>
                 <h1 className='text-4xl  mx-auto'>
-                    Login/SignUp to get your fans support YOU
+                    Login to get your fans support YOU
                 </h1>
 
                 <div className="flex flex-col gap-2 [] p-10">
@@ -94,7 +96,7 @@ const Login = () => {
                     </button>
 
 
-                    <button
+                    <button onClick={() => { signIn("github") }}
                         className="flex items-center  border border-[#FF44CC] rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-soft-neon hover:shadow-[0_0_20px_rgba(160,32,240,1)] transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                         <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 73 73" version="1.1">
