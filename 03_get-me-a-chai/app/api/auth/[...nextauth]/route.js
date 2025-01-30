@@ -5,16 +5,19 @@ import NextAuth from 'next-auth'
 // import GoogleProvider from 'next-auth/providers/google'
 // import EmailProvider from 'next-auth/providers/email'
 import GitHubProvider from 'next-auth/providers/github'
+import mongoose from 'mongoose'
+import User from '@/models/User'
+import Payment from '@/models/Payment'
 
-export const authoptions =  NextAuth({
-    providers: [
-      // OAuth authentication providers...
-      GitHubProvider({
-        clientId: process.env.GITHUB_ID,
-        clientSecret: process.env.GITHUB_SECRET,
-      }),  
+export const authoptions = NextAuth({
+  providers: [
+    // OAuth authentication providers...
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
 
-      // Code will not execute if you do not have the following environment variables set
+    // Code will not execute if you do not have the following environment variables set
 
     //   AppleProvider({
     //     clientId: process.env.APPLE_ID,
@@ -33,7 +36,34 @@ export const authoptions =  NextAuth({
     //     server: process.env.MAIL_SERVER,
     //     from: 'NextAuth.js <no-reply@example.com>'
     //   }),
-    ]
-  })
+  ], callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      if (account.provider == "github") {
+        // return true
+        const client = await mongoose.connect("mongodb://127.0.0.1:27017/chai")
+        const currentUser = User.findOne({ email: email })
+        if (!currentUser) {
+          const newUser = new User({
+            email: email,
+            username: email.split("@")[0],
+          })
+          await newUser.save()
+         
+        }
+        else {
 
-  export {authoptions as GET, authoptions as POST}
+          user.name = currentUser.username
+        }
+        return true
+      }
+    },
+    async session({ session, user, token }) {
+      const dbUser = await User.find({ email: session.user.email })
+      user.name = newUser.username
+      return session
+    },
+  }
+
+})
+
+export { authoptions as GET, authoptions as POST }
