@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex justify-center items-center gap-4 flex-col text-soft-neon h-[44vh]  font-nosifer">
         <div className="font-bold flex items-center text-5xl font-nosifer">
           Buy Me a Chai
-          <span>   <img src="tea.gif" width={80} alt="" />
+          <span>   <img className="invert-[0.23]" src="tea.gif" width={80} alt="" />
           </span>
         </div>
 
