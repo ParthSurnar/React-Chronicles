@@ -1,4 +1,3 @@
-
 import NextAuth from 'next-auth'
 // import AppleProvider from 'next-auth/providers/apple'
 // import FacebookProvider from 'next-auth/providers/facebook'
@@ -8,6 +7,15 @@ import GitHubProvider from 'next-auth/providers/github'
 import mongoose from 'mongoose'
 import User from '@/models/User'
 import Payment from '@/models/Payment'
+
+// Database connection function
+const connectDB = async () => {
+  if (mongoose.connection.readyState === 1) return; // Avoid reconnecting if already connected
+  await mongoose.connect("mongodb://127.0.0.1:27017/chai", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+};
 
 export const authoptions = NextAuth({
   providers: [
@@ -36,34 +44,42 @@ export const authoptions = NextAuth({
     //     server: process.env.MAIL_SERVER,
     //     from: 'NextAuth.js <no-reply@example.com>'
     //   }),
-  ], callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-      if (account.provider == "github") {
-        // return true
-        const client = await mongoose.connect("mongodb://127.0.0.1:27017/chai")
-        const currentUser = User.findOne({ email: email })
-        if (!currentUser) {
+  ],
+  callbacks: {
+    async signIn({ user, account }) {
+      if (account.provider === "github") {
+        await connectDB(); // Ensure DB is connected
+
+        const existingUser = await User.findOne({ email: user.email });
+
+        if (!existingUser) {
           const newUser = new User({
-            email: email,
-            username: email.split("@")[0],
-          })
-          await newUser.save()
-         
+            email: user.email,
+            username: user.email.split("@")[0], // Extract username before "@"
+          });
+          await newUser.save();
+          user.name = newUser.username;
+        } else {
+          user.name = existingUser.username;
         }
-        else {
 
-          user.name = currentUser.username
-        }
-        return true
+        return true; // Allow sign-in
       }
+      return false; // Deny sign-in for other providers (optional)
     },
-    async session({ session, user, token }) {
-      const dbUser = await User.find({ email: session.user.email })
-      user.name = newUser.username
-      return session
+
+    async session({ session }) {
+      await connectDB(); // Ensure DB is connected
+
+      const dbUser = await User.findOne({ email: session.user.email });
+
+      if (dbUser) {
+        session.user.username = dbUser.username;
+      }
+
+      return session;
     },
-  }
+  },
+});
 
-})
-
-export { authoptions as GET, authoptions as POST }
+export { authoptions as GET, authoptions as POST };
