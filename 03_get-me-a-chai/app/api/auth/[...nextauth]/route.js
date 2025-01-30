@@ -6,7 +6,6 @@ import NextAuth from 'next-auth'
 import GitHubProvider from 'next-auth/providers/github'
 import mongoose from 'mongoose'
 import User from '@/models/User'
-import Payment from '@/models/Payment'
 
 // Database connection function
 const connectDB = async () => {
