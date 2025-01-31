@@ -3,6 +3,10 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/navigation'
+import { fetchuser, updateProfile } from '@/actions/useractions'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Bounce } from 'react-toastify';
 
 const Dashboard = () => {
     const { data: session, update } = useSession()
@@ -97,7 +101,7 @@ const Dashboard = () => {
                     </div>
 
                     {/* Submit Button  */}
-                    <div className="my-6">
+                    <div  className="my-6">
                         <button type="submit" className="block w-full p-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-blue-500 focus:ring-4 focus:outline-none   dark:focus:ring-blue-800 font-medium text-sm">Save</button>
                     </div>
                 </form>

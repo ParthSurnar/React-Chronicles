@@ -61,8 +61,6 @@ export const updateProfile = async (data, oldusername) => {
         
     }
     else{
-
-        
         await User.updateOne({email: ndata.email}, ndata)
     }
 
