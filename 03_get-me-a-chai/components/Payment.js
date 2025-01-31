@@ -10,7 +10,7 @@ import { Bounce } from 'react-toastify';
 import { useRouter } from 'next/navigation'
 import { notFound } from "next/navigation"
 
-const PaymentPage = ({ username }) => {
+const Payment = ({ username }) => {
     // const { data: session } = useSession()
 
     const [paymentform, setPaymentform] = useState({ name: "", message: "", amount: "" })
@@ -170,4 +170,4 @@ const PaymentPage = ({ username }) => {
     )
 }
 
-export default PaymentPage
+export default Payment
