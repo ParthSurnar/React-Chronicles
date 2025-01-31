@@ -108,7 +108,31 @@ const Payment = ({ username }) => {
                 <div className='absolute -bottom-20 right-[33%] md:right-[46%] border-white overflow-hidden border-2 rounded-full size-36'>
                     <img className='rounded-full object-cover size-36' width={128} height={128} src={currentUser.profilepic} alt="" />
                 </div>
+            </div><div className="cover w-full relative">
+                <img className="object-cover w-full h-[330px]" src="banner.gif" alt="" />
+                <div className="absolute -bottom-14 right-[46.7%] border border-[#FF44CC] rounded-full">
+                    <img
+                        className="rounded-full"
+                        width={105}
+                        height={105}
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8KKwXKTCPdbTKm9IuHGdhd9ybc7cdSclZCQ&s"
+                        alt=""
+                    />
+                </div>
             </div>
+
+            {/* Info Section */}
+            <div className="info gap-2 flex flex-col justify-center items-center text-center mt-[90px] text-soft-neon font-nosifer text-[20px]">
+                <div className="font-bold">@{params.username}</div> {/* ✅ Now works properly */}
+                <div className="font-bold text-3xl">JB2A - Jules&Ben's Animated Assets</div>
+                <div className="font-light text-[20px]">Creating Animated art for VTT's</div>
+
+                <div className="text-[15px] text-slate-400 flex gap-6">
+                    <span>16,136 members</span>
+                    <span>94 posts</span>
+                    <span>$16,540/release</span>
+                </div>
+                </div>
             <div className="info flex justify-center items-center my-24 mb-32 flex-col gap-2">
                 <div className='font-bold text-lg'>
 
