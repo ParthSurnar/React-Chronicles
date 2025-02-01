@@ -19,6 +19,7 @@ const connectDB = async () => {
 
 export const authoptions = NextAuth({
   providers: [
+      
     // OAuth authentication providers...
     GitHubProvider({
       clientId: process.env.GITHUB_ID,

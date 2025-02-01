@@ -18,7 +18,7 @@ const Payment = ({ username }) => {
     const [payments, setPayments] = useState([])
     const searchParams = useSearchParams()
     const router = useRouter()
-
+    
     useEffect(() => {
         getData()
     }, [])

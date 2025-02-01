@@ -9,6 +9,11 @@ const UserSchema = new Schema({
     coverpic: { type: String },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
+    razorpayid: { type: String },
+    razorpaysecret: { type: String },
+    bio: { type: String },
+    location: { type: String },
+    
 });
 
 // Only check once to avoid redundancy

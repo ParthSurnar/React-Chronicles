@@ -22,7 +22,9 @@ const Username = ({ params: paramsPromise }) => {
 
     if (!session) {
         return null; // Don't render anything if the user isn't logged in
+
     }
+    
 
     return (
         <>
