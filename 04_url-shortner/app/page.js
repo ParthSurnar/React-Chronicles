@@ -13,16 +13,20 @@ export default function Home() {
             Most of the shortners will ask you for details but we don't. <br /> We are the most trusted URL shortener in the world.
           </p>
           <div className="flex justify-start items-center gap-2">
-          <Link href="/generate"> <button className='rounded-lg px-3  gap-2 bg-slate-800 p-2 text-white '>Try now </button></Link>
-          <Link href="/github"> <button className='rounded-lg px-3  gap-2 bg-slate-800 p-2  text-white'> GitHub</button></Link>
+            <Link href="/shorten"> <button className='rounded-lg px-3  gap-2 bg-slate-800 p-2 text-white '>Try now </button></Link>
+            <a href="https://github.com/ParthSurnar/React-Chronicles/tree/a8f9539cbe36934b1e281ae1f2181bde170656c3/04_url-shortner"
+              target="_blank"
+              rel="noopener noreferrer">
+              <button className="rounded-lg px-3 gap-2 bg-slate-800 p-2 text-white">GitHub</button>
+            </a>
           </div>
         </div>
         <div className="relative">
           <Image className="mix-blend-darken" src={"/vector.jpg"} alt="vector" fill={true} />
         </div>
-        
-          
-        
+
+
+
       </section>
     </main>
   );
