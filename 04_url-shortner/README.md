@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# URL Shortener
 
-## Getting Started
+Welcome to the URL Shortener project! This project is a simple and efficient tool to shorten long URLs, making them easier to share and manage.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Shorten URLs**: Convert long URLs into short, manageable links.
+- **Custom Aliases**: Create custom aliases for your shortened URLs.
+- **Analytics**: Track the number of clicks on your shortened URLs.
+- **User Authentication**: Secure your links with user authentication.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Frontend**: React, HTML, CSS
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Authentication**: JWT (JSON Web Tokens)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/url-shortener.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd url-shortener
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm start
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Register or log in to your account.
+3. Enter the long URL you want to shorten.
+4. Click the "Shorten" button to generate a short URL.
+5. Use the short URL to share with others.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Contact
+
+If you have any questions or feedback, feel free to reach out to us at [your-email@example.com](mailto:your-email@example.com).
+
+Happy URL shortening!
+
