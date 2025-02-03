@@ -53,8 +53,7 @@ export async function POST(request) {
 
         if (!client) return;
         const db = client.db("BitLinks");
-        const collection = db.collection("urls");
-
+        const collection = db.collection("url");
         const existing = await collection.findOne({ shorturl: body.shorturl });
         if (existing) {
             return new Response(
