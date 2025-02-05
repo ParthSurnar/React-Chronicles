@@ -86,3 +86,32 @@ type ReadOnlyPerson = { readonly [K in keyof Person]: Person[K] };
 // 2️⃣0️⃣ conditional types (Types based on a condition)
 type Check<T> = T extends string ? "String Type" : "Other Type";
 let checkResult: Check<42>; // "Other Type"
+
+
+// 1️⃣ `void`: Function that doesn't return a value
+function logMessage(message: string): void {
+    console.log(message);  // This function doesn't return anything
+  }
+  
+  // 2️⃣ `undefined`: Variable that hasn’t been assigned a value
+  let userAge: number | undefined;
+  userAge = undefined;  // `undefined` can be assigned to a variable
+  
+  // 3️⃣ `null`: Represents the intentional absence of any object value
+  let activeUser: string | null = null;  // `null` indicates no user is active
+  
+  // 4️⃣ `never`: Function that never returns (e.g., throws an error or runs forever)
+  function throwError(message: string): never {
+    throw new Error(message);  // The function throws an error, it never returns
+  }
+  
+  // 5️⃣ `unknown`: Safe version of `any`. Must check type before using it
+  let input: unknown;
+  input = 5;
+  input = "Hello";
+  
+  // Type guard to check type before using it safely
+  if (typeof input === 'string') {
+    console.log(input.toUpperCase());  // Now it's safe to use string methods
+  }
+  
