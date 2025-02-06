@@ -180,7 +180,11 @@ const product1: ProductDetails = {
 
 // ✅ `product1` has properties from both `Product` and `ProductDetails`
 
+<<<<<<< HEAD
 // ---------------------------
+=======
+// --------------------------------
+>>>>>>> ada752ae37ab888da38e9555a3cba827d558f347
 
 // 5️⃣ USING INTERSECTION TYPES WITH FUNCTION TYPES
 // You can create complex function signatures using intersection types.
