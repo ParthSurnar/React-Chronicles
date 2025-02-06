@@ -1,0 +1,14 @@
+🔥 Summary of Classes & Objects in TypeScript
+
+
+Feature         	    Description
+Classes	                Blueprints for creating objects
+Objects         	    Instances of classes
+Constructor	            Initializes properties when an object is created
+Methods	                Define behavior inside a class
+Access Modifiers	    Control visibility (public, private, protected)
+Readonly	            Prevents modification after initialization
+Getters/Setters	        Control access to private properties
+Static Methods	        Belong to the class, not instances
+Inheritance	Enables     code reuse across classes
+Abstract Classes	    Define structure but can't be instantiated
