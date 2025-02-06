@@ -3,11 +3,11 @@
 // ===================================================
 // Functions passed as arguments to another function.
 
-function fetchData(callback: (data: string) => void) {
+function fetchData1(callback: (data: string) => void) {
     setTimeout(() => {
       callback("Fetched Data");
     }, 1000);
   }
   
-  fetchData((data) => console.log(data)); // ✅ Output: Fetched Data (after 1s)
+  fetchData1((data) => console.log(data)); // ✅ Output: Fetched Data (after 1s)
   
