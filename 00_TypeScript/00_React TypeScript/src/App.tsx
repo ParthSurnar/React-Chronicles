@@ -1,13 +1,14 @@
 import React from 'react'
+import User from './components/User'
 function App() {
 
   // const url: string = 'https://www.google.com'
 
   return (
     <>
-      <div className='font-bold text-red-400'>TypeScript Practice In React</div>
-     <a href="https://www.google.com" target='_blank' > <button > click me </button></a>
-
+    <div>
+      <User name='parth' age={19} isStudent={true}/>
+    </div>
 
     </>
   )
