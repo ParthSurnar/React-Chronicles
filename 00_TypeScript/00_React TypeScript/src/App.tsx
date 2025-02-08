@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div>TypeScript Practice In React</div>
+      <div className='font-bold text-red-400'>TypeScript Practice In React</div>
     </>
   )
 }
