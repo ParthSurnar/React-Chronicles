@@ -151,18 +151,37 @@
 
 // Form Submission
 
-// const Form = () => {
-//   const handleSubmit = (event: React.FormEvent<HTMLFormElement>)=>{
-//     event.preventDefault()
-//     console.log('Form Submitted')
-//   };
+import React, { useRef } from "react";
 
-//   return(
-//     <form onSubmit={handleSubmit}>
-//       <input type="text" placeholder="Name" />
-//       <button type="submit">Submit</button>
-//     </form>
-//   )
-// }
-//   export default Form
+const Form = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleCopy = (event: React.ClipboardEvent<HTMLInputElement>) => {
+    console.log("Text copied!");
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log("Form Submitted");
+  };
+
+  const handleManualCopy = () => {
+    if (inputRef.current) {
+      navigator.clipboard.writeText(inputRef.current.value);
+      console.log("Text copied manually:", inputRef.current.value);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Name" onCopy={handleCopy} ref={inputRef} />
+      <button type="button" onClick={handleManualCopy}>Copy</button>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default Form;
+
+
 
