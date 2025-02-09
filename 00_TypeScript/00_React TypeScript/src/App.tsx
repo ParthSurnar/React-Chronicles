@@ -2,6 +2,8 @@
 // import Customer from './components/Customer'
 // function App() {
 
+import { FormEvent } from "react"
+
 // import { useState } from "react"
 
 //   // const url: string = 'https://www.google.com'
@@ -134,14 +136,32 @@
 // export default Button
 
 
-const inputBox = () => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>)=>{
-    console.log(event.target.value , "Input Changed" )
-  }
+// const inputBox = () => {
+//   const handleChange = (event: React.ChangeEvent<HTMLInputElement>)=>{
+//     console.log(event.target.value , "Input Changed" )
+//   }
 
-return(
-  <input type="text" onChange={handleChange} placeholder="input"/>
-)
+// return(
+//   <input type="text" onChange={handleChange} placeholder="input"/>
+// )
+// }
+// //✅ TypeScript knows event.target.value is always a string.
+// export default inputBox
+
+
+// Form Submission
+
+const Form = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>)=>{
+    event.preventDefault()
+    console.log('Form Submitted')
+  };
+
+  return(
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Name" />
+      <button type="submit">Submit</button>
+    </form>
+  )
 }
-//✅ TypeScript knows event.target.value is always a string.
-export default inputBox
+  export default Form
