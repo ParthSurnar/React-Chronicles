@@ -2,6 +2,8 @@
 // import Customer from './components/Customer'
 // function App() {
 
+import { useState } from "react"
+
 //   // const url: string = 'https://www.google.com'
 
 //   return (
@@ -79,18 +81,39 @@
 // export default App
 
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+
+// const App = () => {
+
+//   const [count, setCount] = useState<number>(0)
+
+
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+//       <button onClick={() => setCount(count + 1)}>Increment</button>
+//       <button onClick={() => setCount(count - 1)}>Decrement</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// Object State
+
+type User = {
+  name: string ,
+  age: number
+}
 
 const App = () => {
 
-  const [count, setCount] = useState<number>(0)
-
+  const [user, setUser] = useState<User>({name: "Parth", age: 19})
 
   return (
     <div>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <p>{user.name} is {user.age} Years old</p>
     </div>
   )
 }
