@@ -20,12 +20,20 @@
 
 import React from 'react'
 
-const App = () => {
+type useCard = {
+  name: string,
+  age: number,
+}
+
+const User = ({ name, age }: useCard) => {
+  return <p>{name} is {age} Years old</p>
+}
+
+function App() {
   return (
     <div>
-      
+      <User name="Parth" age={19} />
     </div>
   )
 }
-
 export default App
