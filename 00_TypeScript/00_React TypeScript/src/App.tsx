@@ -1,16 +1,30 @@
+// import React from 'react'
+// import Customer from './components/Customer'
+// function App() {
+
+//   // const url: string = 'https://www.google.com'
+
+//   return (
+//     <>
+//       <div>
+//         <Customer name="Parth" age={12} color='blue'/>
+//       </div>
+
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
 import React from 'react'
-import User from './components/User'
-function App() {
 
-  // const url: string = 'https://www.google.com'
-
+const App = () => {
   return (
-    <>
     <div>
-      <User name='parth' age={19} isStudent={true}/>
+      
     </div>
-
-    </>
   )
 }
 
