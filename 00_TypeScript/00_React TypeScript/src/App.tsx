@@ -39,19 +39,39 @@
 // export default App
 
 
-type greetingProp = {
-  name: string,
-  message?: string
-}
+// type greetingProp = {
+//   name: string,
+//   message?: string
+// }
 
-const Greeting = ({name, message = "Hey"}: greetingProp) => {
-  return <p>{message} {name}</p>
-}
+// const Greeting = ({name, message = "Hey"}: greetingProp) => {
+//   return <p>{message} {name}</p>
+// }
 
-function App() {
+// function App() {
+//   return (
+//     <div>
+//       <Greeting name="Parth" message="Hello"/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+import { useState } from "react";
+
+
+const App = () => {
+
+  const [message, setMessage] = useState<string>("Hello World")
+
   return (
     <div>
-      <Greeting name="Parth" message="Hello"/>
+      <h1>{message}</h1>
+      <button onClick={() =>setMessage("TypeScript is Cool")}>
+        Click Me
+      </button>
+
     </div>
   )
 }
