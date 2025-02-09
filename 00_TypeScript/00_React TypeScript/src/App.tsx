@@ -58,20 +58,39 @@
 
 // export default App
 
-import { useState } from "react";
+// import { useState } from "react";
 
+
+// const App = () => {
+
+//   const [message, setMessage] = useState<string>("Hello World")
+
+//   return (
+//     <div>
+//       <h1>{message}</h1>
+//       <button onClick={() =>setMessage("TypeScript is Cool")}>
+//         Click Me
+//       </button>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React, { useState } from 'react'
 
 const App = () => {
 
-  const [message, setMessage] = useState<string>("Hello World")
+  const [count, setCount] = useState<number>(0)
+
 
   return (
     <div>
-      <h1>{message}</h1>
-      <button onClick={() =>setMessage("TypeScript is Cool")}>
-        Click Me
-      </button>
-
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
     </div>
   )
 }
