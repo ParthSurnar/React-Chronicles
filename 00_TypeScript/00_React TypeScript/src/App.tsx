@@ -2,7 +2,7 @@
 // import Customer from './components/Customer'
 // function App() {
 
-import { FormEvent } from "react"
+// import { FormEvent } from "react"
 
 // import { useState } from "react"
 
@@ -151,17 +151,18 @@ import { FormEvent } from "react"
 
 // Form Submission
 
-const Form = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>)=>{
-    event.preventDefault()
-    console.log('Form Submitted')
-  };
+// const Form = () => {
+//   const handleSubmit = (event: React.FormEvent<HTMLFormElement>)=>{
+//     event.preventDefault()
+//     console.log('Form Submitted')
+//   };
 
-  return(
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Name" />
-      <button type="submit">Submit</button>
-    </form>
-  )
-}
-  export default Form
+//   return(
+//     <form onSubmit={handleSubmit}>
+//       <input type="text" placeholder="Name" />
+//       <button type="submit">Submit</button>
+//     </form>
+//   )
+// }
+//   export default Form
+
