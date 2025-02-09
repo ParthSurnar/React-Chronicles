@@ -2,6 +2,8 @@
 // import Customer from './components/Customer'
 // function App() {
 
+import { Children } from "react"
+
 // import { FormEvent } from "react"
 
 // import { useState } from "react"
@@ -151,37 +153,48 @@
 
 // Form Submission
 
-import React, { useRef } from "react";
+// import React, { useRef } from "react";
 
-const Form = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
+// const Form = () => {
+//   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleCopy = (event: React.ClipboardEvent<HTMLInputElement>) => {
-    console.log("Text copied!");
-  };
+//   const handleCopy = (event: React.ClipboardEvent<HTMLInputElement>) => {
+//     console.log("Text copied!");
+//   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log("Form Submitted");
-  };
+//   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+//     event.preventDefault();
+//     console.log("Form Submitted");
+//   };
 
-  const handleManualCopy = () => {
-    if (inputRef.current) {
-      navigator.clipboard.writeText(inputRef.current.value);
-      console.log("Text copied manually:", inputRef.current.value);
-    }
-  };
+//   const handleManualCopy = () => {
+//     if (inputRef.current) {
+//       navigator.clipboard.writeText(inputRef.current.value);
+//       console.log("Text copied manually:", inputRef.current.value);
+//     }
+//   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Name" onCopy={handleCopy} ref={inputRef} />
-      <button type="button" onClick={handleManualCopy}>Copy</button>
-      <button type="submit">Submit</button>
-    </form>
-  );
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input type="text" placeholder="Name" onCopy={handleCopy} ref={inputRef} />
+//       <button type="button" onClick={handleManualCopy}>Copy</button>
+//       <button type="submit">Submit</button>
+//     </form>
+//   );
+// };
+
+// export default Form;
+
+
+
+type ButtonProps = {
+  children: React.ReactNode;
 };
 
-export default Form;
+const CustomButton = ({ children }: ButtonProps) => {
+  return <button>{children}</button>;
+};
 
-
-
+export default function App() {
+  return <CustomButton>Click Me</CustomButton>;
+}
