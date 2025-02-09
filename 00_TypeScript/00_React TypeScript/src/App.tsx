@@ -187,14 +187,36 @@ import { Children } from "react"
 
 
 
-type ButtonProps = {
-  children: React.ReactNode;
-};
+// type ButtonProps = {
+//   children: React.ReactNode;
+// };
 
-const CustomButton = ({ children }: ButtonProps) => {
-  return <button>{children}</button>;
-};
+// const CustomButton = ({ children }: ButtonProps) => {
+//   return <button>{children}</button>;
+// };
+
+// export default function App() {
+//   return <CustomButton>Click Me</CustomButton>;
+// }
+
+type CardProp = {
+  title: string,
+  children: React.ReactNode
+}
+
+const Card = ({title, children}: CardProp) => {
+  return (
+    <div className="card">
+      <h2>{title}</h2>
+      {children}
+    </div>
+  );
+}
 
 export default function App() {
-  return <CustomButton>Click Me</CustomButton>;
+  return (
+    <Card title="Hello">
+      <p>This is card</p>
+    </Card>
+  )
 }
