@@ -121,14 +121,27 @@
 // export default App
 
 
-const Button = () => {
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      console.log('Button clicked', event)
-}
+// const Button = () => {
+//   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+//       console.log('Button clicked', event)
+// }
 
-return (
-  <button onClick={handleClick}>Click Me</button>
+// return (
+//   <button onClick={handleClick}>Click Me</button>
+// )
+// }
+
+// export default Button
+
+
+const inputBox = () => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>)=>{
+    console.log(event.target.value , "Input Changed" )
+  }
+
+return(
+  <input type="text" onChange={handleChange} placeholder="input"/>
 )
 }
-
-export default Button
+//✅ TypeScript knows event.target.value is always a string.
+export default inputBox
