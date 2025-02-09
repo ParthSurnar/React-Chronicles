@@ -2,7 +2,7 @@
 // import Customer from './components/Customer'
 // function App() {
 
-import { useState } from "react"
+// import { useState } from "react"
 
 //   // const url: string = 'https://www.google.com'
 
@@ -102,20 +102,33 @@ import { useState } from "react"
 
 // Object State
 
-type User = {
-  name: string ,
-  age: number
+// type User = {
+//   name: string ,
+//   age: number
+// }
+
+// const App = () => {
+
+//   const [user, setUser] = useState<User>({name: "Parth", age: 19})
+
+//   return (
+//     <div>
+//       <p>{user.name} is {user.age} Years old</p>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+const Button = () => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+      console.log('Button clicked', event)
 }
 
-const App = () => {
-
-  const [user, setUser] = useState<User>({name: "Parth", age: 19})
-
-  return (
-    <div>
-      <p>{user.name} is {user.age} Years old</p>
-    </div>
-  )
+return (
+  <button onClick={handleClick}>Click Me</button>
+)
 }
 
-export default App
+export default Button
