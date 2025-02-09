@@ -18,22 +18,42 @@
 
 
 
-import React from 'react'
+// import React from 'react'
 
-type useCard = {
+// type useCard = {
+//   name: string,
+//   age: number,
+// }
+
+// const User = ({ name, age }: useCard) => {
+//   return <p>{name} is {age} Years old</p>
+// }
+
+// function App() {
+//   return (
+//     <div>
+//       <User name="Parth" age={19} />
+//     </div>
+//   )
+// }
+// export default App
+
+
+type greetingProp = {
   name: string,
-  age: number,
+  message?: string
 }
 
-const User = ({ name, age }: useCard) => {
-  return <p>{name} is {age} Years old</p>
+const Greeting = ({name, message = "Hey"}: greetingProp) => {
+  return <p>{message} {name}</p>
 }
 
 function App() {
   return (
     <div>
-      <User name="Parth" age={19} />
+      <Greeting name="Parth" message="Hello"/>
     </div>
   )
 }
+
 export default App
