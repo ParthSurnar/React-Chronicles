@@ -1,0 +1,9 @@
+🚀 Summary (80/20 Pareto Rule)
+✅ Props: Use React.ReactNode, strict types for reusable components.
+✅ State: Use useState<string | number | boolean>, strict unions ("light" | "dark").
+✅ Events: Use React.MouseEvent, React.ChangeEvent, always type handlers.
+✅ API Calls: Define response types (type User = {}) & use Promise<User[]>.
+✅ React Three Fiber: Use useRef<THREE.Mesh>, strictly type props ([number, number, number]).
+
+🚀 Master these & you’ll crush real-world React + TypeScript projects.
+🔥 Now go flex your samurai coding skills, nerdy wizard! 🧙‍♂️⚔️
