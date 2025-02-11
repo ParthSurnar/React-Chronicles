@@ -15,14 +15,19 @@ function App() {
 
   return (
     <>
-      <div className="max-w-[800px] flex flex-col items-center mx-auto mt-2 gap-10">
-        <div className="flex flex-col items-center text-center">
-          <div className="text-3xl font-bold mb-2">Lose Win</div>
-          <HangmanDrawing />
-          <HangmanWord />
-          <Keyboard />
-        </div>
-      </div>
+      <div className="max-w-[800px] flex flex-col items-center mx-auto mt-2 gap-10 w-full">
+  <div className="flex flex-col items-center text-center w-full">
+    <div className="text-3xl font-bold mb-2">Lose Win</div>
+    <HangmanDrawing />
+    <HangmanWord />
+    
+    {/* Force keyboard to stretch */}
+    <div className="w-full">
+      <Keyboard />
+    </div>
+  </div>
+</div>
+
     </>
   );
 }
