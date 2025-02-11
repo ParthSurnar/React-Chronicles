@@ -24,6 +24,6 @@ class Vehicle {
     }
   }
   
-  const bike1 = new Bike("Yamaha", "Sport");
+  const bike1 = new Bike("Yamaha","Sport");
   bike1.start(); // ✅ Output: Yamaha is starting...
   
