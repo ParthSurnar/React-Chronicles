@@ -1,13 +1,16 @@
 // Code for the App component
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
 
+  const [wordToGuess, setWordToGuess] = useState("test");
+
   return (
     <>
-      <h1 className='text-2xl '>HangMan Project</h1>
+      <h1 className="text-2xl ">HangMan Project</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
