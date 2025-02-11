@@ -1,17 +1,28 @@
 // Code for the App component
 import { useState } from "react";
 import words from "./wordList.json";
+import HangmanDrawing from "./components/HangmanDrawing";
+import HangmanWord from "./components/HangmanWord";
+import Keyboard from "./components/Keyboard";
 import "./App.css";
 
 function App() {
   const [wordToGuess, setWordToGuess] = useState(() => {
     return words[Math.floor(Math.random() * words.length)];
   });
-  console.log({ wordToGuess });
+
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
   return (
     <>
-      <h1 className="text-2xl ">HangMan Project</h1>
+      <div className="max-w-[800px] flex flex-col items-center mx-auto mt-2 gap-10">
+        <div className="flex flex-col items-center text-center">
+          <div className="text-3xl font-bold mb-2">Lose Win</div>
+          <HangmanDrawing />
+          <HangmanWord />
+          <Keyboard />
+        </div>
+      </div>
     </>
   );
 }
