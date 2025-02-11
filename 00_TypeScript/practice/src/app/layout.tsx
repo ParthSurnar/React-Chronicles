@@ -27,9 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased z-50`}
       >
-        {children}
+        <div className="relative z-50">
+
+        {children }
+        </div>
         <FluidCursor />
       </body>
     </html>
