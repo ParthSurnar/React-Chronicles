@@ -16,10 +16,14 @@ html::-webkit-scrollbar{
   display : none;
 }
 
+/* Create class in order to use custom cursor 
+  in the place you want to add */
+
+
 .cursorr{
-  cursor : url(/icons8-katana-32.png) , auto;
+  cursor : url("/icons8-katana-32.png") , auto;
 }
 
 .armour {
-  cursor : url(/icons8-samurai-60.png) , auto;
+  cursor : url("/icons8-samurai-60.png") , auto;
 }

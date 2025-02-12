@@ -1,6 +1,9 @@
+"use client"
 import React from "react";
 import Link from "next/link";
+import { useDisableRightClick } from "@/components/Disable";
 export default function Home() {
+  useDisableRightClick();
   return (
     <>
     

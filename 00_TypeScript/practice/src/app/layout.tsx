@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FluidCursor from "./cursor";
 import SmoothScrollWrapper from "@/lenis";
-import { ReactLenis, useLenis } from 'lenis/react'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +25,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+
   return (
     <html lang="en">
       <body
@@ -34,6 +35,7 @@ export default function RootLayout({
         <SmoothScrollWrapper>
         <div className="">
         {children }
+          
         </div>
         </SmoothScrollWrapper>
         <FluidCursor />
