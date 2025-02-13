@@ -1,8 +1,10 @@
 "use client"
 import React, { useEffect } from "react";
 import Link from "next/link";
+import { Flex, Text, Button  } from "@radix-ui/themes";
 // import { useDisableRightClick } from "@/components/Disable";
 import Lenis from 'lenis'
+
 export default function Home() {
   // useEffect(() => {
   //   // Initialize Lenis
@@ -17,6 +19,10 @@ export default function Home() {
 
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-400 ">
         {/* <h1 className="font-semibold text-3xl ">First page</h1> */}
+        {/* <Button> */}
+          {/* <BookmarkIcon /> Bookmark */}
+        {/* </Button> */}
+
         < Link href="/about" className="font-semibold text-3xl armour ">About</Link>
         < Link href="/contact" className="font-semibold text-3xl armour ">Contact</Link>
       </div>
