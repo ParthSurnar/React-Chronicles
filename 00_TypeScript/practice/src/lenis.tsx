@@ -1,7 +1,7 @@
 "use client"; // Only needed in Next.js App Router
-
-// import { useEffect } from "react";
-// import Lenis from "@studio-freight/lenis";
+// 
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
 
 // export default function SmoothScrollWrapper({ children }: { children: React.ReactNode }) {
 //   useEffect(() => {
@@ -22,3 +22,28 @@
 
 //   return <div>{children}</div>;
 // }
+
+
+// export default function SmoothScrollWrapper({ children }: { children: React.ReactNode }) {
+//   useEffect(() => {
+//     const lenis = new Lenis({ lerp: 0.1, });
+//     requestAnimationFrame(lenis.raf);
+//   }
+//     , []);
+//   return <div>{children}</div>
+// }
+
+// export default SmoothScrollWrapper;
+
+// export default function SmoothScrollWrapper ({children}:{children:React.ReactNode}) {
+//   useEffect(() => {
+//     const lenis = new Lenis({ lerp: 0.1, });
+//     requestAnimationFrame(lenis.raf);
+//     return () => {
+//       lenis.destroy();
+//     }
+//   }, [])
+// }
+
+export * from 'lenis/react';
+
