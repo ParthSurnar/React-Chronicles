@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FluidCursor from "./cursor";
+import ReactLenis from "lenis/react";
 // import SmoothScrollWrapper from "@/lenis";
 
 const geistSans = Geist({
@@ -33,10 +34,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased cursorr`}
       >
         {/* <SmoothScrollWrapper> */}
+        <ReactLenis root>
         <div className="">
         {children }
           
         </div>
+        </ReactLenis>
         {/* </SmoothScrollWrapper> */}
         <FluidCursor />
       </body>
