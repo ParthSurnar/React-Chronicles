@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FluidCursor from "./cursor";
 import ReactLenis from "lenis/react";
+import "@radix-ui/themes/styles.css";
+
 // import SmoothScrollWrapper from "@/lenis";
 
 const geistSans = Geist({
