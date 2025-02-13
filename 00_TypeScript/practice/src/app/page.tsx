@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useDisableRightClick } from "@/components/Disable";
 import Lenis from 'lenis'
 export default function Home() {
-  useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
-  }, []);
+  // useEffect(() => {
+  //   // Initialize Lenis
+  //   const lenis = new Lenis({
+  //     autoRaf: true,
+  //   });
+  // }, []);
   useDisableRightClick();
   return (
     <>
