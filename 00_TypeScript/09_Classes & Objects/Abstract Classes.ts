@@ -35,4 +35,36 @@ abstract class Shape {
 //     abstract name: string;
 //     abstract getArea(): number;
 //   }
-  
+
+class Rectangle extends Shape {
+    width: number;
+    height: number;
+
+    constructor(width: number, height: number) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    getArea() {
+        return this.width * this.height;
+    }
+}
+
+const rectangle = new Rectangle(10, 5);
+console.log(rectangle.getArea()); // ✅ Output: 50
+
+// another example 
+abstract class Person1 {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    display(): void {
+        console.log(this.name);
+    }
+
+    abstract find(name: string): Person;
+}
