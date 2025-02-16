@@ -47,3 +47,17 @@ class Employee {
   }
  
   const ind1 = new Individual("Alice", 25, "NY");
+
+  console.log(ind1.name); // ✅ Allowed (public)
+  // console.log(ind1.age); // ❌ ERROR (private)
+  // console.log(ind1.address); // ❌ ERROR (protected)
+
+  ind1.showAge(); // ✅ Output: Alice's age is 25
+  // ===========================
+  // 🔹 6️⃣ ACCESS MODIFIERS IN CONSTRUCTOR PARAMETERS
+  // ===========================
+  // - We can use access modifiers in constructor parameters to automatically create and initialize class properties.
+  // - This is a shorthand syntax to define and initialize class properties.
+  // - The access modifier is required in the constructor parameter to create a class property.
+  // - The property is automatically created and initialized with the value passed to the constructor.
+  // - The access modifier in the constructor parameter is optional if the property is not required.
