@@ -24,3 +24,25 @@ class BankAccount {
   account.deposit = 1000; // ✅ Using setter
   console.log(account.getBalance); // ✅ Using getter (Output: 1000)
   
+
+// anotehr example
+
+class StudentWithAge {
+    private _age: number = 0;
+  
+    get age() {
+      return this._age;
+    }
+  
+    set age(value: number) {
+      if (value > 0) {
+        this._age = value;
+      } else {
+        console.log("Invalid age.");
+      }
+    }
+  }
+  
+  const student = new StudentWithAge();
+  student.age = 20; // ✅ Using setter
+  console.log(student.age); // ✅ Using getter (Output: 20)
