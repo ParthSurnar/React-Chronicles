@@ -28,3 +28,22 @@ class Employee {
   
   emp1.showSalary(); // ✅ Output: John's salary is 50000
   
+ // another example
+ 
+  class Individual {
+      public name: string;
+      private age: number
+      protected address: string;
+
+      constructor(name: string, age: number, address: string) {
+          this.name = name;
+          this.age = age;
+          this.address = address;
+      }
+
+      showAge() {
+          console.log(`${this.name}'s age is ${this.age}`);
+      }
+  }
+ 
+  const ind1 = new Individual("Alice", 25, "NY");
