@@ -16,4 +16,17 @@ class Person {
   const person1 = new Person("Alice", 25); // Creating an object
   
   console.log(person1.name, person1.age); // Output: Alice 25
-  
+ 
+    // another example
+    class Vehicle1 {
+        model: string;
+        year: number;
+    
+        constructor(model: string, year: number) {
+            this.model = model;
+            this.year = year;
+        }
+    }
+
+    const vehicle = new Vehicle1("BMW", 2020);
+    console.log(vehicle.model, vehicle.year); // Output: BMW 2020
