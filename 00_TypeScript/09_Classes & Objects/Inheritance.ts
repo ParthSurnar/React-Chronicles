@@ -27,3 +27,12 @@ class Vehicle {
   const bike1 = new Bike("Yamaha","Sport");
   bike1.start(); // ✅ Output: Yamaha is starting...
   
+
+  // In the above example, the `Bike` class extends the `Vehicle` class.
+  // The `Bike` class inherits the `brand` property and `start` method from the `Vehicle` class.
+  // The `super(brand)` method calls the parent class constructor
+  // The `Bike` class has its own `type` property.
+  // The `bike1` object is an instance of the `Bike` class.
+  // The `start` method is called on the `bike1` object.
+  // Output: Yamaha is starting...
+  
