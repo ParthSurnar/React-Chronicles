@@ -5,10 +5,13 @@ import { Box, Progress, Flex, Text, Radio } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css"; // ✅ Required for Radix UI Themes
 // import MyDialog from "@/components/Dialog";
 import * as Select from '@radix-ui/react-select';
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <>
+
+        <Navbar />
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-400">
         {/* <MyDialog /> */}
 

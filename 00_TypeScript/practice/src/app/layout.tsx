@@ -5,6 +5,7 @@ import "./globals.css";
 import FluidCursor from "./cursor";
 import ReactLenis from "lenis/react";
 import "@radix-ui/themes/styles.css";
+import Navbar from "@/components/Navbar";
 
 // import SmoothScrollWrapper from "@/lenis";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
         {/* <SmoothScrollWrapper> */}
         <ReactLenis root>
         <div className="">
+       
         {children }
           
         </div>
