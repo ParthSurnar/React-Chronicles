@@ -45,7 +45,7 @@ export default function RootLayout({
         </div>
         </ReactLenis>
         {/* </SmoothScrollWrapper> */}
-        <FluidCursor />
+        {/* <FluidCursor /> */}
       </body>
     </html>
   );
