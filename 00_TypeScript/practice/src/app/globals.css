@@ -30,3 +30,6 @@ html::-webkit-scrollbar{
   cursor : url("/icons8-samurai-60.png") , auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
