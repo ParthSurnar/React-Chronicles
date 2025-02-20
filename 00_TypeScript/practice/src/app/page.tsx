@@ -19,12 +19,7 @@ export default function Home() {
           <Progress value={50} max={100} />
         </Box>
        
-        <Link href="/about" className="font-semibold text-3xl armour">
-          About
-        </Link>
-        <Link href="/contact" className="font-semibold text-3xl armour">
-          Contact
-        </Link>
+        
       </div>
 
       <div className="min-h-screen flex flex-col items-center justify-center bg-purple-400">
