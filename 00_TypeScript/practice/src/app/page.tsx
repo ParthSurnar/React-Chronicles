@@ -17,6 +17,15 @@ export default function Home() {
 
         <Box maxWidth="300px" p="4" style={{ backgroundColor: "gray", borderRadius: "medium" }} >
           <Progress value={50} max={100} />
+            <Link 
+            href="/about" 
+            className="mt-4 block px-4 py-2 text-white font-semibold 
+            rounded-md bg-blue-500 hover:bg-blue-600 transition-colors 
+            duration-200 ease-in-out text-center shadow-md 
+            hover:shadow-lg active:transform active:scale-95"
+            >
+            About Us
+            </Link>
         </Box>
        
         
