@@ -14,7 +14,16 @@ export default function Home() {
         <Navbar />
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-400">
         {/* <MyDialog /> */}
-
+        <Link 
+          href="/contact" 
+          className="mb-4 block px-4 py-2 text-white font-semibold 
+          rounded-md bg-emerald-500 hover:bg-emerald-600 
+          transition-all duration-300 ease-in-out text-center 
+          shadow-md hover:shadow-xl hover:-translate-y-1 
+          hover:scale-105 active:transform active:scale-95"
+        >
+          Contact Us
+        </Link>
         <Box maxWidth="300px" p="4" style={{ backgroundColor: "gray", borderRadius: "medium" }} >
           <Progress value={50} max={100} />
             <Link 
