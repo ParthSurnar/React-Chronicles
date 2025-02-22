@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Box, Progress, Flex, Text, Card, Container } from "@radix-ui/themes";
+import { Box, Text, Card, Container } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
@@ -14,13 +14,17 @@ export default function Home() {
   };
 
   return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
+    <div 
+      className="h-screen w-full overflow-y-scroll snap-y snap-mandatory"
+      style={{ scrollSnapType: "y mandatory", height: "100vh", overflowY: "scroll", scrollbarWidth: "thin" }}
+    >
       <Navbar />
-      
+
       {/* Screen 1: Hero */}
-      <section className="snap-start min-h-screen relative bg-gradient-to-br from-slate-800 to-slate-600">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-        <Container className="relative z-10 h-screen flex flex-col items-center justify-center px-4">
+      <section 
+        className="snap-start min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-600"
+      >
+        <Container>
           <motion.div
             className="max-w-2xl text-center"
             initial="initial"
@@ -39,12 +43,15 @@ export default function Home() {
       </section>
 
       {/* Screen 2: Info */}
-      <section className="snap-start min-h-screen bg-gradient-to-br from-indigo-800 to-indigo-600">
-        <Container className="h-screen flex items-center justify-center">
+      <section 
+        className="snap-start min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-800 to-indigo-600"
+      >
+        <Container>
           <motion.div
             className="text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl font-bold text-white mb-6">Screen Two</h2>
             <Text className="text-white/80 max-w-xl mx-auto">
@@ -55,12 +62,15 @@ export default function Home() {
       </section>
 
       {/* Screen 3: Features */}
-      <section className="snap-start min-h-screen bg-gradient-to-br from-rose-800 to-rose-600">
-        <Container className="h-screen flex items-center justify-center">
+      <section 
+        className="snap-start min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-800 to-rose-600"
+      >
+        <Container>
           <motion.div
             className="w-full max-w-4xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl font-bold text-white text-center mb-10">Screen Three</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -75,8 +85,10 @@ export default function Home() {
       </section>
 
       {/* Screen 4: Contact */}
-      <section className="snap-start min-h-screen bg-gradient-to-br from-emerald-800 to-emerald-600">
-        <Container className="h-screen flex items-center justify-center">
+      <section 
+        className="snap-start min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-800 to-emerald-600"
+      >
+        <Container>
           <Box className="bg-white/10 backdrop-blur-lg p-8 rounded-xl w-full max-w-md">
             <Text className="text-2xl font-bold text-white mb-6">Screen Four</Text>
             <Link 
