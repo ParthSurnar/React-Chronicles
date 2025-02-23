@@ -103,3 +103,34 @@ export default function Home() {
     </div>
   );
 }
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
+
+const liveEffect = {
+  animate: {
+    scale: [1, 1.02, 1],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
+
+const backgroundPulse = {
+  animate: {
+    background: [
+      "linear-gradient(to bottom right, rgba(30,41,59,1), rgba(71,85,105,1))",
+      "linear-gradient(to bottom right, rgba(40,51,69,1), rgba(81,95,115,1))",
+      "linear-gradient(to bottom right, rgba(30,41,59,1), rgba(71,85,105,1))"
+    ],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
