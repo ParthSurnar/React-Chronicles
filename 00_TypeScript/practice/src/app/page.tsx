@@ -29,7 +29,7 @@ export default function Home() {
             className="max-w-2xl text-center"
             initial="initial"
             animate="animate"
-            variants={fadeInUp}
+            variants={fadeInUp} 
           >
             <h1 className="text-5xl font-bold text-white mb-6">Screen One</h1>
             <Link 
@@ -37,6 +37,12 @@ export default function Home() {
               className="inline-flex items-center px-6 py-3 text-white font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 ease-out transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50"
             >
               Next Screen →
+            </Link>
+            <Link 
+              href="/more" 
+              className="inline-flex items-center px-6 py-3 text-white font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 ease-out transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50"
+            >
+             more→
             </Link>
           </motion.div>
         </Container>
