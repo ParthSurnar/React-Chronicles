@@ -55,7 +55,7 @@ export default function Home() {
           >
             <h2 className="text-4xl font-bold text-white mb-6">Screen Two</h2>
             <Text className="text-white/80 max-w-xl mx-auto">
-             second screen
+             2nd screen
             </Text>
           </motion.div>
         </Container>
