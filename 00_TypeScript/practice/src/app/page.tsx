@@ -60,6 +60,27 @@ export default function Home() {
           </motion.div>
         </Container>
       </section>
+
+      {/* Screen 3: Features */}
+      <section 
+        className="snap-start min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-800 to-purple-600"
+      >
+        <Container>
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl font-bold text-white mb-6">Screen Three</h2>
+            <Card className="p-6 bg-white/10 backdrop-blur-sm">
+              <Text className="text-white/90">
+                New feature section with a cool card component
+              </Text>
+            </Card>
+          </motion.div>
+        </Container>
+      </section>
     </div>
   );
 }
