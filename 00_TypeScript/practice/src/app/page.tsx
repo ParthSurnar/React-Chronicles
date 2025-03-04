@@ -75,7 +75,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-white mb-6">Screen Three</h2>
             <Card className="p-6 bg-white/10 backdrop-blur-sm">
               <Text className="text-white/90">
-               cool card component
+               cool card 
               </Text>
             </Card>
           </motion.div>
