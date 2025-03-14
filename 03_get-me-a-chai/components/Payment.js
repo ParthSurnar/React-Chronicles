@@ -139,7 +139,7 @@ const Payment = ({ username }) => {
                     @{username}
                 </div>
                 <div className='text-slate-400'>
-                    Lets help {username} get a chai!!
+                     help {username} get a chai!!
 
                 </div>
                 <div className='text-slate-400'>
