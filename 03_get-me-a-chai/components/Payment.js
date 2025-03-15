@@ -143,7 +143,7 @@ const Payment = ({ username }) => {
 
                 </div>
                 <div className='text-slate-400'>
-                    {payments.length} Payments .   ₹{payments.reduce((a, b) => a + b.amount, 0)} raised
+                    {payments.length}  .   ₹{payments.reduce((a, b) => a + b.amount, 0)} raised
                 </div>
 
                 <div className="payment flex gap-3 w-[80%] mt-11 flex-col md:flex-row">
