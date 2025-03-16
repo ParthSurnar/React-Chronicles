@@ -149,7 +149,7 @@ const Payment = ({ username }) => {
                 <div className="payment flex gap-3 w-[80%] mt-11 flex-col md:flex-row">
                     <div className="supporters w-full md:w-1/2 bg-slate-900 rounded-lg text-white px-2 md:p-10">
                         {/* Show list of all the supporters as a leaderboard  */}
-                        <h2 className='text-2xl font-bold my-5'> Top 10 Supporters</h2>
+                        <h2 className='text-2xl font-bold my-5'> Top 12 Supporters</h2>
                         <ul className='mx-5 text-lg'>
                             {payments.length == 0 && <li>No payments yet</li>}
                             {payments.map((p, i) => {
