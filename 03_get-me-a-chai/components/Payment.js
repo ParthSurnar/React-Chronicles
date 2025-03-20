@@ -165,7 +165,7 @@ const Payment = ({ username }) => {
                     </div>
 
                     <div className="makePayment w-full md:w-1/2 bg-slate-900 rounded-lg text-white px-2 md:p-10">
-                        <h2 className='text-2xl font-bold my-5'>Make THe Payment</h2>
+                        <h2 className='text-2xl font-bold my-5'>Make The Payment</h2>
                         <div className='flex gap-2 flex-col'>
                             {/* input for name and message   */}
                             <div>
