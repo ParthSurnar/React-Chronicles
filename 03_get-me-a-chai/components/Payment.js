@@ -185,7 +185,7 @@ const Payment = ({ username }) => {
                         <div className='flex flex-col md:flex-row gap-2 mt-5'>
                             <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(1000)}>Pay ₹10</button>
                             <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(2000)}>Pay ₹40</button>
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(3000)}>Pay ₹30</button>
+                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(3000)}>Pay ₹60</button>
                         </div>
                     </div>
                 </div>
