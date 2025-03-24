@@ -151,7 +151,7 @@ const Payment = ({ username }) => {
                         {/* Show list of all the supporters as a leaderboard  */}
                         <h2 className='text-2xl font-bold my-5'> Top 12 Supporters</h2>
                         <ul className='mx-5 text-lg'>
-                            {payments.length == 0 && <li>No payments yet</li>}
+                            {payments.length == 0 && <li>No Payments yet</li>}
                             {payments.map((p, i) => {
                                 return <li key={i} className='my-4 flex gap-2 items-center'>
                                     <img width={33} src="avatar.gif" alt="user avatar" />
