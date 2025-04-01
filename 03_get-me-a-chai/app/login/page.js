@@ -18,7 +18,7 @@ const Login = () => {
         <>
             <div className='font-nosifer text-soft-neon flex justify-center items-center pt-7 text-center container mx-auto flex-col'>
                 <h1 className='text-4xl  mx-auto'>
-                    Login To Get your fans support YOU
+                    Login To Get Your fans support YOU
                 </h1>
 
                 <div className="flex flex-col gap-2 [] p-10">
