@@ -84,7 +84,7 @@ const Username = ({ params: paramsPromise }) => {
                                 Raja donated $40 with a message "Supporting this all the way! 🙌"</li>
                             <li className="my-2 hover:bg-gray-800 transition-all duration-300 p-1 gap-2 flex rounded-lg">
                                 <img src="avatar.gif" width={45} height={45} alt="" />
-                                Sophia donated $50 with a message "Much Love for this initiative!❤️"</li>
+                                Sophia donated $50 with a Message "Much Love for this initiative!❤️"</li>
                             <li className="my-2 hover:bg-gray-800 transition-all duration-300 p-1 gap-2 flex rounded-lg">
                                 <img src="avatar.gif" width={45} height={45} alt="" />
                                 Lee donated $80 with a message "Great cause, happy to help! 🙏"</li>
