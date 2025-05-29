@@ -48,7 +48,7 @@ const Login = () => {
                                 </g>
                             </g>
                         </svg>
-                        <span>Continue with Google..</span>
+                        <span>Continue with Google...</span>
                     </button>
 
 
