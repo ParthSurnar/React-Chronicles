@@ -65,7 +65,7 @@ const Login = () => {
                                     </path>
                                 </g>
                             </g>
-                        </svg> <span>Continue with LinkedIn</span>
+                        </svg> <span>Continue with Linked In</span>
                     </button>
 
 
