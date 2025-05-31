@@ -84,7 +84,7 @@ const Login = () => {
                             </g>
                         </svg>
 
-                        <span>Continue with Twitter</span>
+                        <span>Continue With Twitter</span>
                     </button>
 
 
