@@ -47,7 +47,7 @@ function About() {
           transition={{ duration: 0.8 }}
         >
           <Link href="/about" className="font-bold text-6xl hover:text-slate-300 transition-colors duration-300">
-            About Us
+            About US
           </Link>
         </motion.div>
       </div>
