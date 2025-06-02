@@ -103,7 +103,7 @@ const Login = () => {
                             </g>
                         </svg>
 
-                        <span>Continue with Facebook</span>
+                        <span>Continue With Facebook</span>
                     </button>
 
 
