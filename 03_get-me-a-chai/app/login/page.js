@@ -127,7 +127,7 @@ const Login = () => {
                             </g>
                         </svg>
 
-                        <span>Continue with Github</span>
+                        <span>Continue With Github</span>
                     </button>
 
 
