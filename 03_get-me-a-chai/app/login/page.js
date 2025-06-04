@@ -148,7 +148,7 @@ const Login = () => {
                             </g>
                         </svg>
 
-                        <span>Continue with Apple</span>
+                        <span>Continue With Apple</span>
                     </button>
 
 
